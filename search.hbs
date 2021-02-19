@@ -1,0 +1,48 @@
+{{!
+	Theme created by TidyCustoms based on Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 & MIT license (html5up.net/license)
+}}
+{{> head}}
+{{> top}}
+   <article class="post">
+      <header class="main post__header">  
+         <h1>
+            {{ translate 'search.title' }}
+         </h1>  
+      </header>
+
+      <div class="post__inner">
+         <form action="{{@website.searchUrl}}" class="search-form">
+            <input
+               type="search"
+               name="{{@config.custom.searchParam}}"
+               placeholder="{{ translate 'search.placeholder' }}"/>
+            <button 
+               type="submit" 
+               class="search-button">
+                  {{ translate 'search.submit' }}
+            </button>
+         </form>
+
+         <script>
+            (function () {
+               var cx = '{{@config.custom.searchId}}';
+               var gcse = document.createElement('script');
+               gcse.type  = 'text/javascript';
+               gcse.async = true;
+               gcse.src   = 'https://cse.google.com/cse.js?cx=' + cx;
+               var s = document.getElementsByTagName('script')[0];
+               s.parentNode.insertBefore(gcse, s);
+            })();
+         </script>
+         <gcse:searchresults-only></gcse:searchresults-only>
+      </div>
+   </article>
+
+   </div>
+</div>
+    {{> sidebar}}
+</div>
+
+{{> footer}}

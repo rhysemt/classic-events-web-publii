@@ -1,0 +1,1242 @@
+{
+    "name": "Editorial-2",
+    "version": "1.0.2.0",
+    "author": "Theme created by TidyCustoms <https://tidycustoms.net/> based on an HTML template by HTML5 UP <https://html5up.net/>",
+    "menus": {
+        "mainMenu": "Main menu"
+    },
+    "renderer": {
+        "relatedPostsNumber": 4,
+        "renderRelatedPosts": true,
+        "renderSimilarPosts": false,
+        "renderPrevNextPosts": false,
+        "createContentStructure": true,
+        "featuredPostsNumber": 1,
+        "createTagPages": true,
+        "createAuthorPages": true,
+        "createTagsList": true,
+        "createSearchPage": true,
+        "create404page": true,
+        "includeFeaturedInPosts": false,
+        "customHTML": {
+            "afterPost": "After every post"
+        }
+    },
+    "supportedFeatures": {
+        "blockEditor": true,
+        "tagsList": true,
+        "tagImages": true,
+        "authorImages": false,
+        "searchPage": true,
+        "errorPage": true
+    },
+    "config": [
+        {
+            "name": "postsPerPage",
+            "label": "Posts per page",
+            "value": 6,
+            "type": "number"
+        },
+        {
+            "name": "tagsPostsPerPage",
+            "label": "Tags posts per page",
+            "value": 6,
+            "type": "number"
+        },
+        {
+            "name": "authorsPostsPerPage",
+            "label": "Authors posts per page",
+            "value": 6,
+            "type": "number"
+        },
+        {
+            "name": "excerptLength",
+            "label": "Excerpt length",
+            "value": 20,
+            "type": "number"
+        },
+        {
+            "name": "logo",
+            "label": "Website logo",
+            "value": "",
+            "type": "upload",
+            "upload": true
+        }
+    ],
+    "customConfig": [
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Front page",
+            "group": "Layout",
+            "size": ""
+        },
+        {
+            "name": "frontSource",
+            "label": "Front page displays",
+            "group": "Layout",            
+            "value": "default",
+            "type": "radio",
+            "options": [
+                {
+                    "label": "Latest posts",
+                    "value": "default"
+                },
+                {
+                    "label": "Selected post",
+                    "value": "post"
+                }
+            ]
+        },  
+        {
+            "name": "frontPost",
+            "label": "Posts",
+            "group": "Layout",
+            "note": "We strongly recommended 'hide' and 'noindex' the selected post to avoid the duplicate content issue.",
+            "value": "",
+            "type": "posts-dropdown", 
+            "dependencies": [
+            {
+                "field": "frontSource",
+                "value": "post"
+            }]
+        },
+        {
+            "name": "frontGallery",
+            "group": "Layout",
+            "label": "",
+            "note": "Enable if you want to display a post with image gallery",
+            "value": false,
+            "type": "checkbox", 
+            "dependencies": [
+            {
+                "field": "frontSource",
+                "value": "post"
+            }]
+        },
+
+        {
+            "name": "includeFeaturedInPosts",
+            "label": "Featured posts",
+            "group": "Layout",
+            "note": "The first wide article is made up of a featured post. If you have more than one featured post, by default, they are not included in the post listing on the front page to avoid duplication of the first wide post in the post listing. To change this behavior enable this option. ",
+            "value": false,
+            "type": "checkbox",
+            "dependencies": [
+            {
+                "field": "frontSource",
+                "value": "default"
+            }]
+        }, 
+
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Tag/s & Author page",
+            "group": "Layout",
+            "size": "big"
+        },
+        {
+            "name": "postsCount",
+            "group": "Layout",
+            "label": "Post or tag count",
+            "note": "The number of all posts or tags displayed in the header of the page.",
+            "value": true,
+            "type": "checkbox"
+        },
+
+        {
+            "name": "feedReadMore",
+            "group": "Cards",
+            "label": "Read more buton",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "frontSource",
+                "value": "default"
+            }]
+        },  
+        {
+            "name": "feedFeaturedImage",
+            "group": "Cards",
+            "label": "Featured image",
+            "value": false,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "frontSource",
+                "value": "default"
+            }]
+        },      
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Search",
+            "group": "Sidebar",
+            "size": ""
+        },
+        {
+            "name": "searchId",
+            "group": "Sidebar",
+            "label": "Google Custom Search Id",
+            "note": "A search ID is required for search functionality, which uses Google Custom Search. Learn how to configure it here: <a href='https://getpublii.com/docs/search-configuration.html' target='_blank'>https://www.getpublii.com/docs/...</a>",
+            "value": "",
+            "type": "text"
+        },
+        {
+            "name": "searchParam",
+            "group": "Sidebar",
+            "label": "Search parameter",
+            "note": "You can change the default \"q\" search parameter if desired; this is recommended only for advanced users.",
+            "value": "q",
+            "type": "text"
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Editor Pick's",
+            "group": "Sidebar",
+            "size": "big"
+        },
+        {
+            "name": "editorPicksTagIndicator",
+            "label": "Source",
+            "group": "Sidebar",
+            "note": "Display posts from the selected tag",
+            "value": "",
+            "type": "tags-dropdown"
+        }, 
+        {
+            "name": "editorPicksItemsAmount",
+            "label": "Number of posts",
+            "group": "Sidebar",          
+            "value": "2",
+            "type": "text"
+        }, 
+        {
+            "name": "editorPicksItemExcluded",
+            "label": "Exclude posts",
+            "group": "Sidebar",
+            "note": "Enter a post ID, or IDs separated by comma",
+            "value": "",
+            "type": "text"
+        },  
+        {
+            "name": "editorPicksItemOffset",
+            "label": "Offset",
+            "group": "Sidebar", 
+            "note": "Specify number of posts to pass over",
+            "value": "",
+            "placeholder": "0",
+            "type": "text"
+        }, 
+        {
+            "name": "editorPicksItemOrdering",
+            "label": "Sort order",
+            "group": "Sidebar",
+            "value": "static",
+            "type": "select",
+            "options": [
+                {
+                    "label": "Ascending",
+                    "value": "asc"
+                },
+                {
+                    "label": "Descending",
+                    "value": "desc"
+                }
+            ]
+        },      
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Get in touch",
+            "group": "Sidebar",
+            "size": "big"
+        },
+        {
+            "name": "getInTouch",
+            "group": "Sidebar",
+            "label": "On/Off",
+            "value": true,
+            "type": "checkbox"
+        }, 
+        {
+            "name": "getInTouchText",
+            "label": "Text",
+            "group": "Sidebar",
+            "value": "<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus,ac varius enim lorem ullamcorper dolore. Proin sed aliqu facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p><ul class=\"contact\"><li class=\"icon solid fa-envelope\"><a href=\"#\">information@untitled.tld</a></li><li class=\"icon solid fa-phone\">(000) 000-0000</li><li class=\"icon solid fa-home\">1234 Somewhere Road #8254<br/>Nashville, TN 00000-0000</li></ul>",
+            "type": "wysiwyg",
+            "dependencies": [{
+                "field": "getInTouch",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Copyright note",
+            "group": "Sidebar",
+            "note": "The copyright note can be found in a separate <a href=\"#\" data-internal-link=\"Footer\">Footer</a> tab.",
+            "size": "big"
+        },
+        {
+            "name": "primaryColor",
+            "label": "Primary color",
+            "group": "Colors",
+            "value": "#F56A6A",
+            "type": "colorpicker"
+        },             
+       
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Main settings",
+            "group": "Fonts",
+            "size": "small"
+        },        
+        {
+            "name": "fontFamily",
+            "label": "Font family",
+            "group": "Fonts",
+            "note": "The 'OS Default Font' option will use the native system fonts of the browser your site visitors are using, providing a boost to speed and performance.<p><strong>Please note:</strong> when using Google Fonts, the IP address of your website visitors will be sent to Google to allow the correct fonts to be downloaded to their browser. The Google Fonts API limits the collection, storage and use of end-user data only to what is needed to deliver the fonts efficiently.</p>",
+            "value": "font-pair-0",
+            "type": "select",
+            "options": [
+                {
+                    "label": "OS Default Font + OS Default Font",
+                    "value": "font-pair-0"
+                },
+                {
+                    "label": "Roboto Slab + Open Sans",
+                    "value": "font-pair-1"
+                },
+                {
+                    "label": "Asap + Asap",
+                    "value": "font-pair-2"
+                },
+                {
+                    "label": "Merriweather + Fira Sans",
+                    "value": "font-pair-3"
+                },
+                {
+                    "label": "Space Mono + Space Mono",
+                    "value": "font-pair-4"
+                }
+                ,
+                {
+                    "label": "Dosis + OS Default Font",
+                    "value": "font-pair-5"
+                },
+                {
+                    "label": "Lora + OS Default Font",
+                    "value": "font-pair-6"
+                },
+                {
+                    "label": "Noto Serif + OS Default Font",
+                    "value": "font-pair-7"
+                },
+                {
+                    "label": "Muli + Muli",
+                    "value": "font-pair-8"
+                },
+                {
+                    "label": "Domine + Open Sans",
+                    "value": "font-pair-9"
+                },
+                {
+                    "label": "Slabo + OS Default Font",
+                    "value": "font-pair-10"
+                },
+                {
+                    "label": "Playfair Display + OS Default Font",
+                    "value": "font-pair-11"
+                },
+                {
+                    "label": "Source Serif Pro + OS Default Font",
+                    "value": "font-pair-12"
+                },
+                {
+                    "label": "Aleo + OS Default Font",
+                    "value": "font-pair-13"
+                },
+                {
+                    "label": "Cardo + OS Default Font",
+                    "value": "font-pair-14"
+                },
+                {
+                    "label": "Crimson Text + OS Default Font",
+                    "value": "font-pair-15"
+                }
+            ]
+        },
+       
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "",
+            "group": "Fonts",
+            "size": "medium"
+        },
+        {
+            "name": "fontNormalWeight",
+            "label": "Normal font weight",
+            "group": "Fonts",            
+            "value": "400",
+            "type": "select",
+            "options": [
+                {
+                    "label": "300",
+                    "value": "300"
+                },
+                {
+                    "label": "400",
+                    "value": "400"
+                },
+                {
+                    "label": "500",
+                    "value": "500"
+                },
+                {
+                    "label": "600",
+                    "value": "600"
+                },
+                {
+                    "label": "700",
+                    "value": "700"
+                },
+                {
+                    "label": "900",
+                    "value": "900"
+                }
+            ]
+        },
+        {
+            "name": "fontBoldWeight",
+            "label": "Bold font weight",
+            "group": "Fonts",            
+            "value": "600",
+            "type": "select",
+            "options": [
+                {
+                    "label": "300",
+                    "value": "300"
+                },
+                {
+                    "label": "400",
+                    "value": "400"
+                },
+                {
+                    "label": "500",
+                    "value": "500"
+                },
+                {
+                    "label": "600",
+                    "value": "600"
+                },
+                {
+                    "label": "700",
+                    "value": "700"
+                },
+                {
+                    "label": "900",
+                    "value": "900"
+                }
+            ]
+        },
+        
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": "Headings",
+            "group": "Fonts",
+            "size": "big"
+        },  
+        {
+            "name": "fontHeadignsWeight",
+            "label": "H1-H6 font weight",
+            "group": "Fonts",    
+            "note": "Please note: not all of the font weights are working with the fonts listed above.",        
+            "value": "700",
+            "type": "select",
+            "options": [
+                {
+                    "label": "300",
+                    "value": "300"
+                },
+                {
+                    "label": "400",
+                    "value": "400"
+                },
+                {
+                    "label": "500",
+                    "value": "500"
+                },
+                {
+                    "label": "600",
+                    "value": "600"
+                },
+                {
+                    "label": "700",
+                    "value": "700"
+                },
+                {
+                    "label": "900",
+                    "value": "900"
+                }
+            ]
+        },
+        {
+            "name": "fontHeadingsTransform",
+            "label": "H1-H6 text transform",
+            "group": "Fonts",            
+            "value": "none",
+            "type": "select",
+            "options": [
+                {
+                    "label": "None",
+                    "value": "none"
+                },
+                {
+                    "label": "Capitalize",
+                    "value": "capitalize"
+                },
+                {
+                    "label": "Lowercase",
+                    "value": "lowercase"
+                },
+                {
+                    "label": "Uppercase",
+                    "value": "uppercase"
+                }
+            ]
+        },
+
+        {
+            "name": "shareFacebook",
+            "group": "Share Buttons",
+            "label": "Facebook",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "shareTwitter",
+            "group": "Share Buttons",
+            "label": "Twitter",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "shareTwitterName",
+            "group": "Share Buttons",
+            "note": "Enter your Twitter account's handle here; it will be used when the Twitter share button is clicked on your site e.g. 'via @TwitterHandle'. If left blank, the default username of @SiteName will be used",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "shareTwitter",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "sharePinterest",
+            "group": "Share Buttons",
+            "label": "Pinterest",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "shareMix",
+            "group": "Share Buttons",
+            "label": "Mix (formerly StumbleUpon)",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "shareLinkedin",
+            "group": "Share Buttons",
+            "label": "LinkedIn",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "shareBuffer",
+            "group": "Share Buttons",
+            "label": "Buffer",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "shareWhatsApp",
+            "group": "Share Buttons",
+            "label": "WhatsApp",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "socialButtons",
+            "group": "Follow buttons",
+            "label": "Follow Buttons",
+            "note": "Display follow buttons in the navbar opposite the menu.",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "socialFacebook",
+            "label": "Facebook",
+            "group": "Follow buttons",
+            "placeholder": "Please enter your Facebook URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialTwitter",
+            "label": "Twitter",
+            "group": "Follow buttons",
+            "placeholder": "Please enter your Twitter URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+
+        {
+            "name": "socialInstagram",
+            "label": "Instagram",
+            "group": "Follow buttons",
+            "placeholder": "Please enter your Instagram URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialLinkedin",
+            "label": "LinkedIn",
+            "group": "Follow buttons",
+            "placeholder": "Please enter your LinkedIn URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialVimeo",
+            "label": "Vimeo",
+            "group": "Follow buttons",
+            "placeholder": "Please enter your Vimeo URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialPinterest",
+            "label": "Pinterest",
+            "group": "Follow buttons",
+            "placeholder": "Please enter your Pinterest URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "socialYoutube",
+            "label": "Youtube",
+            "group": "Follow buttons",
+            "placeholder": "Please enter your Youtube URL",
+            "value": "",
+            "type": "text",
+            "dependencies": [{
+                "field": "socialButtons",
+                "value": "true"
+            }]
+        },
+
+        {
+            "name": "commentDisqusShortname",
+            "label": "Disqus shortname",
+            "group": "Comments",
+            "placeholder": "Please enter your Disqus shortname",
+            "note": "A shortname is the unique identifier assigned to a Disqus site. Please visit https://help.disqus.com/ to find more details. <br /><br /><span style=\"background: #fff8d4\">Do not forget to enable comments under Post Options tab.</span>",
+            "value": "",
+            "type": "text"
+        },
+
+        {
+            "name": "copyrightText",
+            "label": "Copyright note",
+            "group": "Footer",
+            "value": "<p class=\"copyright\"> &copy; Editorial 2 - All rights reserved<br> Design by: <a href=\"https://html5up.net\" target=\"_blank\" rel=\"noopener\">HTML5 UP</a>, Powered by <a href=\"https://getpublii.com\" target=\"_blank\" rel=\"noopener\">Publii</a></p>",
+            "type": "wysiwyg"
+        },
+      
+        {
+            "name": "galleryItemGap",
+            "label": "Item spacing",
+            "group": "Gallery",
+            "note": "Use of REM units recommended but you can also use others (px, vw,)",
+            "value": "0.28333rem",
+            "type": "text"
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": " ",
+            "group": "Gallery",
+            "size": "small"
+         },
+        {
+            "name": "galleryLightboxStyle",
+            "label": "Lightbox style",
+            "group": "Gallery",
+            "note": "Set the lightbox slideshow style by choosing dark or light overlay",
+            "value": "pswp--dark",
+            "type": "select",
+            "options": [
+                {
+                    "label": "Dark",
+                    "value": "pswp--dark"
+                },
+                {
+                    "label": "Light",
+                    "value": "pswp--light"
+                }
+            ]
+        },
+        {
+            "name": "galleryLightboxOpacity",
+            "label": "",
+            "group": "Gallery",
+            "note": "Adjust the lightbox overlay transparency",
+            "value": "0.7",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": " ",
+            "group": "Gallery",
+            "size": "small"
+         },
+        {
+            "name": "galleryAdvanced",
+            "label": "Advanced lightbox settings",
+            "group": "Gallery",
+            "value": false,
+            "type": "checkbox"
+        },
+        {
+            "name": "galleryCounter",
+            "label": "Current slide / total number",
+            "group": "Gallery",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryZoom",
+            "label": "Zoom in/out button",
+            "group": "Gallery",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryFullscreen",
+            "label": "Toggle fullscreen button",
+            "group": "Gallery",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryShare",
+            "label": "Share button",
+            "group": "Gallery",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryClose",
+            "label": "Close button",
+            "group": "Gallery",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryArrows",
+            "label": "Next / Previous arrows",
+            "group": "Gallery",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryPreloader",
+            "label": "Preloader",
+            "group": "Gallery",
+            "note": "Loading indicator is displayed with 1s delay, so if the photo loads faster it will be invisible.",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryCloseOnScroll",
+            "label": "Close gallery on page scroll",
+            "group": "Gallery",
+            "note": "Option works just for devices without hardware touch support.",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+        {
+            "name": "galleryArrowKeys",
+            "label": "Keyboard navigation",
+            "group": "Gallery",
+            "note": "Keyboard left or right arrow key navigation.",
+            "value": true,
+            "type": "checkbox",
+            "dependencies": [{
+                "field": "galleryAdvanced",
+                "value": "true"
+            }]
+        },
+
+        {
+            "name": "formatDate",
+            "label": "Date format",
+            "group": "Additional",
+            "value": "MMMM D, YYYY",
+            "type": "select",
+            "options": [
+                {
+                    "label": "Nov 1, 2016",
+                    "value": "MMM D, YYYY"
+
+            },
+                {
+                    "label": "1 Nov 2016",
+                    "value": "D MMM YYYY"
+
+            },
+                {
+                    "label": "November 1, 2016",
+                    "value": "MMMM D, YYYY"
+            },
+                {
+                    "label": "1 November 2016",
+                    "value": "D MMMM YYYY"
+            },
+                {
+                    "label": "Sunday, November 1, 2016",
+                    "value": "dddd, MMMM D, YYYY"
+            },
+                {
+                    "label": "Sunday, 1 November 2016",
+                    "value": "dddd, D MMMM YYYY"
+            },
+                {
+                    "label": "November 1, 2016 10:02:05",
+                    "value": "MMMM D, YYYY HH:mm:ss"
+
+            },
+                {
+                    "label": "1 November 2016 10:02:05",
+                    "value": "D MMMM YYYY HH:mm:ss"
+
+            },
+                {
+                    "label": "01/21/2016",
+                    "value": "MM/DD/YYYY"
+            },
+                {
+                    "label": "21/01/2016",
+                    "value": "DD/MM/YYYY"
+            },
+                {
+                    "label": "Custom - create your own date format",
+                    "value": "custom"
+            }
+            ]
+        },
+
+        {
+            "name": "formatDateCustom",
+            "group": "Additional",
+            "label": "Create a custom date format",
+            "note": "More details you can find <a href='https://github.com/taylorhakes/fecha' target='_blank'>here.</a>",
+            "value": "HH:mm:ss YY/MM/DD",
+            "type": "text",
+            "dependencies": [{
+                "field": "formatDate",
+                "value": "custom"
+            }]
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": " ",
+            "group": "Additional",
+            "size": "small"
+         },       
+        {
+            "name": "lazyLoadEffect",
+            "label": "Lazy load effects",
+            "group": "Additional",
+            "note": "This option works only if the 'Media lazy load' option is enabled in the Website Speed tab under Site Settings",
+            "value": "fadein",
+            "type": "select",
+            "options": [
+                {
+                    "label": "Fade in",
+                    "value": "fadein"
+                },
+                {
+                    "label": "None",
+                    "value": "none"                
+            }]
+        },
+        {
+            "name": "separator",
+            "type": "separator",
+            "label": " ",
+            "group": "Additional",
+            "size": "small"
+         },
+        {
+            "name": "faviconUpload",
+            "label": "Upload favicon file",
+            "group": "Additional",
+            "note": "The ideal size of a favicon is 16x16 pixels. Save your favicon as either favicon.png or favicon.ico",
+            "value": "",
+            "type": "smallupload",
+            "upload": true
+        },
+        {
+            "name": "faviconExtension",
+            "label": "Favicon extension",
+            "group": "Additional",
+            "value": "image/x-icon",
+            "type": "select",
+            "options": [
+                {
+                    "label": ".ico",
+                    "value": "image/x-icon"
+                },
+                {
+                    "label": ".png",
+                    "value": "image/png"
+                }]
+        }
+    ],
+    "postConfig": [
+        {
+            "name": "featuredImageSize",
+            "label": "Featured image size",
+            "value": "wide",
+            "type": "select",          
+            "options": [
+                {
+                    "label": "Normal",
+                    "value": "normal"
+                },
+                {
+                    "label": "Wide",
+                    "value": "wide"
+                }
+            ]
+        },    
+        {
+            "name": "displayDate",
+            "label": "Display date",
+            "value": 1,
+            "type": "select",          
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },      
+     
+        {
+            "name": "displayLastUpdatedDate",
+            "label": "Display last updated date",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayTags",
+            "label": "Display tags",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        {
+            "name": "displayShareButtons",
+            "label": "Display share buttons",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+        
+        {
+            "name": "displayAuthorBio",
+            "label": "Display author bio",
+            "value": 1,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        },
+
+        {
+            "name": "displayComments",
+            "label": "Display comments",
+            "value": 0,
+            "type": "select",
+            "options": [
+                {
+                    "label": "Enabled",
+                    "value": 1
+                },
+                {
+                    "label": "Disabled",
+                    "value": 0
+                }
+            ]
+        }
+    ],
+    "files": {
+        "ignoreAssets": ["scss", ".DS_Store"],
+        "assetsPath": "assets",
+        "partialsPath": "partials",
+        "responsiveImages": {
+            "contentImages": {
+                "sizes": "(max-width: 48em) 100vw, 768px",
+                "dimensions": {
+                    "xs": {
+                        "width": 300,
+                        "height": "auto"
+                    },
+                    "sm": {
+                        "width": 480,
+                        "height": "auto"
+                    },
+                    "md": {
+                        "width": 768,
+                        "height": "auto"
+                    }
+                }
+            },
+
+            "featuredImages": {
+                "sizes": {
+                    "post": "(max-width: 1600px) 100vw, 1600px",
+                    "card": "(max-width: 768px) 100vw, 33vw",
+                    "intro": "(max-width: 1024px) 100vw, 50vw",
+                    "amp": "(max-width: 768px) 100vw, 768px"
+                },
+
+                "dimensions": {
+                    "xs": {
+                        "width": 300,
+                        "height": "auto",
+                        "group": "post,amp,card,intro"
+                    },
+                    "sm": {
+                        "width": 480,
+                        "height": "auto",
+                        "group": "post,amp,card,intro"
+                    },
+                    "md": {
+                        "width": 768,
+                        "height": "auto",
+                        "group": "post,amp,card,intro"
+                    },
+                    "lg": {
+                        "width": 1024,
+                        "height": "auto",
+                        "group": "post,intro"
+                    },
+                    "xl": {
+                        "width": 1360,
+                        "height": "auto",
+                        "group": "post"
+                    },
+                    "xxl": {
+                        "width": 1600,
+                        "height": "auto",
+                        "group": "post"
+                    }
+                }
+            },
+
+            "tagImages": {
+                "sizes": "(max-width: 768px) 100vw, 768px",
+                "dimensions": {
+                    "xs": {
+                        "width": 300,
+                        "height": "auto"
+                    },
+                    "sm2": {
+                        "width": 480,
+                        "height": "auto"
+                    },
+                    "sm": {
+                        "width": 768,
+                        "height": "auto"
+                    }
+                }
+            },
+
+            "optionImages": {
+                "sizes": "(max-width: 1600px) 100vw, 1600px",
+                "dimensions": {
+                    "xs": {
+                        "width": 300,
+                        "height": "auto"
+                    }
+                }
+            },
+            
+            "galleryImages": {
+                "sizes": "",
+                "dimensions": {
+                    "thumbnail": {
+                         "width": 720,
+                         "height": "auto"                       
+                    }
+                }
+            }
+        }
+    },
+    "customElements": [
+        {
+            "label": "Info",
+            "cssClasses": "msg msg--info",
+            "selector": "p"
+        },
+        {
+            "label": "Highlight",
+            "cssClasses": "msg msg--highlight ",
+            "selector": "p"
+        },
+        {
+            "label": "Success",
+            "cssClasses": "msg msg--success",
+            "selector": "p"
+        },
+        {
+            "label": "Warning",
+            "cssClasses": "msg msg--warning",
+            "selector": "p"
+        },
+        {
+            "label": "Button default",
+            "cssClasses": "button",
+            "selector": "a, button, input[type=button], input[type=submit]"
+        },
+        {
+            "label": "Button primary",
+            "cssClasses": "button primary",
+            "selector": "a, button, input[type=button], input[type=submit]"
+        },
+        {
+            "label": "Button large",
+            "cssClasses": "button large",
+            "selector": "a, button, input[type=button], input[type=submit]"
+        },
+        {
+            "label": "Button small",
+            "cssClasses": "button small",
+            "selector": "a, button, input[type=button], input[type=submit]"
+        },
+        {
+            "label": "Button fit",
+            "cssClasses": "button fit",
+            "selector": "a, button, input[type=button], input[type=submit]"
+        }
+    ]
+}
